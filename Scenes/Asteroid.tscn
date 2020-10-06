@@ -1,0 +1,37 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Asteroids/Asteroid1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Asteroid.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Asteroids/Asteroid2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Asteroids/Asteroid5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Asteroids/Asteroid3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Asteroids/Asteroid8.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Asteroids/Asteroid6.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Asteroids/Asteroid4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Asteroids/Asteroid7.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.2377
+height = 0.662952
+
+[node name="Asteroid" type="KinematicBody2D" groups=[
+"Asteroid",
+]]
+script = ExtResource( 2 )
+
+[node name="AnimSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CollAsteroid" type="CollisionShape2D" parent="."]
+position = Vector2( -0.17966, -1.53566 )
+shape = SubResource( 2 )

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/PlayerMobile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/idle2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/runUp2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/idle1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/runUp1.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.7086, 18.7325 )
+
+[node name="PlayerMobile" type="KinematicBody2D" groups=[
+"Player",
+]]
+position = Vector2( 387.678, 230.398 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2( 15.4365, 82.6832 )
+
+[node name="AnimSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="CollPlayer" type="CollisionShape2D" parent="."]
+position = Vector2( -0.535381, -4.87698 )
+shape = SubResource( 2 )
+
+[node name="TimerAsteroid" type="Timer" parent="."]
+[connection signal="timeout" from="TimerAsteroid" to="." method="_on_Timer_timeout"]

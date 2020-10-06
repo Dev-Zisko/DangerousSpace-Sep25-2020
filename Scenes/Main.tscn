@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Backgrounds/darkspace.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/PlayerMobile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Joystick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Musics/loop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Menu.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="Node"]
+script = ExtResource( 6 )
+
+[node name="BackgroundSpace" type="TextureRect" parent="."]
+margin_left = 1.36038
+margin_right = 801.36
+margin_bottom = 480.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WallUp" parent="." instance=ExtResource( 3 )]
+position = Vector2( 399.347, 0 )
+rotation = -1.5708
+
+[node name="WallDown" parent="." instance=ExtResource( 3 )]
+position = Vector2( 397.58, 480 )
+rotation = 1.5708
+
+[node name="WallRight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 800, 262.831 )
+
+[node name="WallLeft" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 292.978 )
+rotation = 3.14159
+
+[node name="Joystick" parent="." instance=ExtResource( 4 )]
+position = Vector2( 86.7066, 394.77 )
+
+[node name="PlayerMobile" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.582077, 5.64528 )
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="TimerScore" type="Timer" parent="."]
+
+[node name="TimerStart" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="SpawnPlayer" type="Position2D" parent="."]
+position = Vector2( 400, 240 )
+
+[node name="Menu" parent="." instance=ExtResource( 7 )]
+[connection signal="dead" from="PlayerMobile" to="." method="_on_PlayerMobile_dead"]
+[connection signal="timeout" from="TimerScore" to="." method="_on_TimerScore_timeout"]
+[connection signal="timeout" from="TimerStart" to="." method="_on_TimerStart_timeout"]
+[connection signal="start_game" from="Menu" to="." method="new_game"]

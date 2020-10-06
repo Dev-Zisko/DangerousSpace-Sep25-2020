@@ -1,0 +1,330 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Titles/Logo.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Asteroids/Asteroid1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Asteroids/Asteroid3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Asteroids/Asteroid2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Asteroids/Asteroid5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Asteroids/Asteroid8.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Asteroids/Asteroid4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Asteroids/Asteroid6.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Asteroids/Asteroid7.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/runUp1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/PlayerShips/DefaultShip/idle1.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/SplashScreen.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Musics/intro.ogg" type="AudioStream" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "SplashScreen"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleGame:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 100, -450 ), Vector2( 100, -350 ), Vector2( 100, -250 ), Vector2( 100, -150 ), Vector2( 100, -50 ), Vector2( 100, 30 ), Vector2( 44.4811, 0.389956 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShipRun:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 117.852, 568.344 ), Vector2( 165.553, 523.293 ), Vector2( 221.204, 467.642 ), Vector2( 260.955, 435.842 ), Vector2( 324.556, 393.441 ), Vector2( 369.607, 356.34 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShipRun:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 45.0, 42.5, 40.0, 37.5, 35.0, 32.5, 30.0, 15.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShipRun:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ShipIdle:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ShipIdle:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 369.607, 356.34 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Asteroid8:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 406.236, -73.7245 ), Vector2( 248.932, 55.8196 ), Vector2( 95.3296, 220.526 ), Vector2( 8.34998, 311.207 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Asteroid4:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 859.172, 153.958 ), Vector2( 768.491, 244.639 ), Vector2( 670.408, 346.423 ), Vector2( 598.234, 409.345 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Asteroid3:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 821.837, 26.9035 ), Vector2( 684.891, 99.0781 ), Vector2( 488.724, 271.187 ), Vector2( 311.063, 341.511 ), Vector2( 187.071, 417.387 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Asteroid6:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 344.635, -78.4836 ), Vector2( 222.494, -6.30898 ), Vector2( 102.203, 67.7163 ), Vector2( 28.1777, 112.131 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Asteroid1:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 531.574, -102.901 ), Vector2( 557.482, 4.43559 ), Vector2( 605.599, 89.5646 ), Vector2( 674.072, 241.316 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Asteroid7:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 809.563, -199.78 ), Vector2( 661.513, -7.31471 ), Vector2( 617.098, 46.3536 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Asteroid5:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512.272, -244.909 ), Vector2( 454.902, -109.813 ), Vector2( 390.13, 21.5822 ), Vector2( 379.026, 82.653 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Asteroid2:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 295.041, -256.621 ), Vector2( 274.684, -149.284 ), Vector2( 235.821, -86.363 ), Vector2( 172.899, 8.0192 ), Vector2( 154.393, 39.4799 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("TitleGame:rect_scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+}
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+margin_right = 800.0
+margin_bottom = 480.0
+color = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleGame" type="TextureRect" parent="."]
+margin_left = 44.4811
+margin_top = 0.389956
+margin_right = 644.481
+margin_bottom = 405.892
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid1" type="TextureRect" parent="."]
+margin_left = 674.072
+margin_top = 241.316
+margin_right = 720.072
+margin_bottom = 287.317
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid2" type="TextureRect" parent="."]
+margin_left = 154.393
+margin_top = 39.4799
+margin_right = 200.393
+margin_bottom = 85.4799
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid3" type="TextureRect" parent="."]
+margin_left = 187.071
+margin_top = 417.387
+margin_right = 233.071
+margin_bottom = 463.387
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid4" type="TextureRect" parent="."]
+margin_left = 598.234
+margin_top = 409.345
+margin_right = 644.234
+margin_bottom = 455.345
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid5" type="TextureRect" parent="."]
+margin_left = 379.026
+margin_top = 82.653
+margin_right = 425.027
+margin_bottom = 128.653
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid6" type="TextureRect" parent="."]
+margin_left = 28.1777
+margin_top = 112.131
+margin_right = 74.1777
+margin_bottom = 158.131
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid7" type="TextureRect" parent="."]
+margin_left = 617.098
+margin_top = 46.3536
+margin_right = 663.098
+margin_bottom = 92.3536
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Asteroid8" type="TextureRect" parent="."]
+margin_left = 8.34998
+margin_top = 311.207
+margin_right = 54.35
+margin_bottom = 357.207
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipRun" type="TextureRect" parent="."]
+visible = false
+margin_left = 369.607
+margin_top = 356.34
+margin_right = 419.608
+margin_bottom = 416.34
+texture = ExtResource( 10 )
+
+[node name="ShipIdle" type="TextureRect" parent="."]
+margin_left = 369.607
+margin_top = 356.34
+margin_right = 419.607
+margin_bottom = 416.34
+texture = ExtResource( 11 )
+
+[node name="AnimationSplash" type="AnimationPlayer" parent="."]
+autoplay = "SplashScreen"
+anims/SplashScreen = SubResource( 1 )
+
+[node name="SoundSplash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+[connection signal="animation_finished" from="AnimationSplash" to="." method="_on_AnimationSplash_animation_finished"]
